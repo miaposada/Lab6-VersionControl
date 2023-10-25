@@ -9,25 +9,24 @@ def encode(password):
   
 #Menu
 if __name__ == '__main__':
-while menu_Option != 3
-  print("Menu")
-  print("-------------")
-  print("1. Encode")
-  print("2. Decode")
-  print("3. Quit")
-
-menu_Option = input(int("Please enter an option:"))
-  if menu_Option = 1:
-    password = input(int("Please enter your password to encode:"))
-      if len(password) = 8:
-        print("Your password has been encoded and stored!")
-      else:
-        print("Password must be an 8 digits and contain only integers")
-
-  elif menu_Option = 2:
-    encoded = encode(password)
-    print("The encoded password is " + encoded + ", and the original password is " + password)
-
-  else:
-    print("Not a valid menu option.")
-
+    while menu_Option != 3:
+      print("Menu")
+      print("-------------")
+      print("1. Encode")
+      print("2. Decode")
+      print("3. Quit")
+    
+    menu_Option = input(int("Please enter an option:"))
+    if menu_Option == 1:
+        password = input(int("Please enter your password to encode:"))
+        if len(password) == 8:
+            print("Your password has been encoded and stored!")
+        else:
+            print("Password must be an 8 digits and contain only integers")
+    
+    elif menu_Option == 2:
+        encoded = encode(password)
+        print("The encoded password is " + encoded + ", and the original password is " + password)
+    
+    else:
+        print("Not a valid menu option.")
