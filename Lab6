@@ -7,6 +7,16 @@ def encode(password):
       encoded_digit = int(digit) +3
       encode += str(encoded_digit)
   return encode
+
+
+  # decoded by Loubna Benchakouk
+def decode(encoded_password):
+    decode = ""
+    for digit in str(encoded_password):
+        decoded_digit = int(digit) - 3
+        decode += str(decoded_digit)
+    return decode
+
   
 #Menu
 if __name__ == '__main__':
@@ -26,12 +36,13 @@ if __name__ == '__main__':
             else:
                 print("Password must be an 8 digits and contain only integers")
         
+        # changes made by Loubna Benchakouk
+
         elif menu_Option == 2:
-            encoded = encode(password)
-            print("The encoded password is " + str(encoded) + ", and the original password is " + str(password))
-        
+            encoded_password = input("Please enter the encoded password: ")
+            original_password = decode(encoded_password)
+            print(f"The encoded password is {encoded_password}, and the original password is {original_password}.")
         elif menu_Option == 3:
-            pass
-        
+            break
         else:
-            print("Not a valid menu option.")
+            print("Invalid option. Please choose a valid option (1, 2, or 3).")
