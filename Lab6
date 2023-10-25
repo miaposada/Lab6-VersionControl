@@ -3,30 +3,34 @@
 
 def encode(password):
   encode = ""
-  for digit in password:
+  for digit in str(password):
       encoded_digit = int(digit) +3
       encode += str(encoded_digit)
   
 #Menu
 if __name__ == '__main__':
+    menu_Option = 0
     while menu_Option != 3:
-      print("Menu")
-      print("-------------")
-      print("1. Encode")
-      print("2. Decode")
-      print("3. Quit")
+        print("Menu")
+        print("-------------")
+        print("1. Encode")
+        print("2. Decode")
+        print("3. Quit")
     
-    menu_Option = input(int("Please enter an option:"))
-    if menu_Option == 1:
-        password = input(int("Please enter your password to encode:"))
-        if len(password) == 8:
-            print("Your password has been encoded and stored!")
+        menu_Option = int(input("Please enter an option: "))
+        if menu_Option == 1:
+            password = int(input("Please enter your password to encode: "))
+            if len(str(password)) == 8:
+                print("Your password has been encoded and stored!")
+            else:
+                print("Password must be an 8 digits and contain only integers")
+        
+        elif menu_Option == 2:
+            encoded = encode(password)
+            print("The encoded password is " + str(encoded) + ", and the original password is " + str(password))
+        
+        elif menu_Option == 3:
+            pass
+        
         else:
-            print("Password must be an 8 digits and contain only integers")
-    
-    elif menu_Option == 2:
-        encoded = encode(password)
-        print("The encoded password is " + encoded + ", and the original password is " + password)
-    
-    else:
-        print("Not a valid menu option.")
+            print("Not a valid menu option.")
