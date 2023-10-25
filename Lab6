@@ -6,6 +6,7 @@ def encode(password):
   for digit in str(password):
       encoded_digit = int(digit) +3
       encode += str(encoded_digit)
+  return encode
   
 #Menu
 if __name__ == '__main__':
