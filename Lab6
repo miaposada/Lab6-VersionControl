@@ -1,7 +1,7 @@
 #Mia Posada
 #functions
 
-def encode(password)
+def encode(password):
   encode = ""
   for digit in password:
       encoded_digit = int(digit) +3
